@@ -112,3 +112,63 @@ function convert(input, source, target) {
 // console.log(convert("320048", hex, dec)); //3276872
 
 console.log(convert("SAME", alup, alup)); //'SAME', '"SAME" alpha_upper -> alpha_upper');
+
+//Submit
+
+// function toDecimal(input, source) {
+//   let result = 0;
+//
+//   source = source.split('')
+//
+//   input = input.split('')
+//
+//   let k = input.length
+//
+//   while (input.length > 0) {
+//
+//     let i = input[input.length - 1];
+//
+//     let n = source.indexOf(i);
+//
+//     let pow = Math.pow(source.length, k - input.length);
+//
+//     result = result + n * pow;
+//
+//     input = input.slice(0, input.length - 1)
+//   }
+//
+//   return result;
+// }
+//
+// function fromDecToAlp(input, target) {
+//
+//   let result = '';
+//
+//   target = target.split('')
+//
+//   let inputNum = parseInt(input);
+//
+//   if (inputNum === 0) {
+//
+//     return target[0];
+//   }
+//
+//   while (inputNum > 0) {
+//
+//     result = target[inputNum % target.length] + result;
+//
+//     inputNum = Math.floor(inputNum / target.length);
+//   }
+//
+//   return result;
+// }
+//
+// function convert(input, source, target) {
+//   let decimal = toDecimal(input, source);
+//
+//   console.log(decimal)
+//
+//   return fromDecToAlp(decimal, target);
+// }
+//
+// console.log(convert("26", '0123456789', '0123456789abcdef'))

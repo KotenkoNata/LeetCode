@@ -6,19 +6,18 @@ function myLanguages(results) {
 
   let result = []
 
-  for (let language in results){
+  for (let language in results) {
     a.push([language, results[language]]);
   }
 
-
-  a.sort(function (a,b) {
+  a.sort(function (a, b) {
     return b[1] - a[1];
   });
 
 
   a.map(function (element) {
-    console.log(`element`,element[1])
-    if(element[1] >=60){
+    console.log(`element`, element[1])
+    if (element[1] >= 60) {
       result.push(element[0])
     }
   })

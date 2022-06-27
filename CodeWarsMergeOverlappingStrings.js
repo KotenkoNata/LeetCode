@@ -2,40 +2,45 @@
 
 function mergeStrings(first, second) {
 
-  let indexOfLast = second.indexOf(first[first.length - 1]);
-
-  let temp = '';
-
-  if (indexOfLast === -1) {
-    return first + second;
-  } else {
-
-    for (let i = first.length - 1; i > 0; i--) {
-
-      if (!second.startsWith(first[i]) && i === second.length - i) {
-        temp += first[i];
-        console.log(`temp`, temp)
-      } else {
-
-        console.log(first[i], i, second[second.length - i], second.length - i)
-        temp += first[i];
-        console.log(`temp`, temp)
-        console.log("H")
-        break;
-      }
-    }
-
-    temp = temp.split('').reverse().join('');
-
+  if (first === second) {
+    return first
   }
 
-  return `${first.replace(temp, '')}${second}`
+  let minIndex = Math.min(first.length, second.length);
+
+  let tempLeft = '';
+  let tempRight = '';
+
+  function moveFirst() {
+    tempLeft += first[0];
+    first = first.substring(1, first.length);
+  }
+
+  function moveSecond() {
+    tempRight = second[second.length - 1] + tempRight;
+    second = second.substring(0, second.length - 1);
+  }
+
+  while (first.length > second.length) moveFirst();
+  while (first.length < second.length) moveSecond();
+
+  for (let i = 0; i < minIndex; i++) {
+    if (first === second) {
+      break;
+    }
+    moveFirst();
+    moveSecond();
+  }
+
+  return `${tempLeft}${first}${tempRight}`
 }
 
 // console.log(mergeStrings('abcde', 'cdefgh')) //'abcdefgh' str1.length  - str2[0]
 //                        01234    01234
-console.log(mergeStrings('abaab', 'aabab')) //"abaabab"
+// console.log(mergeStrings('abaab', 'aabab')) //"abaabab"
 
 // console.log(mergeStrings("xabc", "ab")) //"xabcab"
 
 // console.log(mergeStrings("abcde", 'bcdefghi')) //abcdefghi
+
+console.log(mergeStrings("baabaaba", "aabaabab")) //abaabaabab

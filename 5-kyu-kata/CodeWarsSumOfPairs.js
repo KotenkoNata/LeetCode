@@ -55,6 +55,7 @@ function test(ints, s) {
       return [s - ints[i], ints[i]]
     }
     seen[ints[i]] = true;
+    console.log(seen)
   }
 }
 

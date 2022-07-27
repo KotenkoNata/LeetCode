@@ -1,28 +1,35 @@
 // Task - https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b/train/javascript
 
-const humanYearsCatYearsDogYears = function (humanYears) {
-  const result = [];
-  result[0] = humanYears;
-  result[1] = 0;
-  result[2] = 0;
+// const humanYearsCatYearsDogYears = function (humanYears) {
+//   const result = [];
+//   result[0] = humanYears;
+//   result[1] = 0;
+//   result[2] = 0;
+//
+//   console.log(result)
+//   for (let i = 1; i <= humanYears; i++) {
+//     if (i === 1) {
+//       result[1] += 15;
+//       result[2] += 15;
+//
+//       console.log(result[1])
+//     } else if (i === 2) {
+//       result[1] += 9;
+//       result[2] += 9;
+//     } else {
+//       result[1] += 4;
+//       result[2] += 5;
+//     }
+//
+//   }
+//   return result;
+// }
+//
+// console.log(humanYearsCatYearsDogYears(2)) //1,15,15
 
-  console.log(result)
-  for (let i = 1; i <= humanYears; i++) {
-    if (i === 1) {
-      result[1] += 15;
-      result[2] += 15;
-
-      console.log(result[1])
-    } else if (i === 2) {
-      result[1] += 9;
-      result[2] += 9;
-    } else {
-      result[1] += 4;
-      result[2] += 5;
-    }
-
-  }
-  return result;
+function telephoneCheck(str) {
+  let result = str.match(/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g);
+  return result ? true : false;
 }
 
-console.log(humanYearsCatYearsDogYears(2)) //1,15,15
+console.log(telephoneCheck("1 (555) 555-5555"));

@@ -3,7 +3,7 @@
 function rot13(message) {
   const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const ciplher = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-  return message.replace(/[a-z]/gi, letter => ciplher[alphabet.indexOf(letter)])
+  return message.replace(/[a-z]/gi, (letter) => ciplher[alphabet.indexOf(letter)]);
 }
 
 console.log(rot13("Test")) //"grfg"
